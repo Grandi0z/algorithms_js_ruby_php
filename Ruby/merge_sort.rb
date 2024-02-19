@@ -56,14 +56,14 @@ def merge(left, right)
 end
 
 def verify_list(list)
-    if list.length <= 0
-        true
+    if list.length <= 1
+        return true
     end
-    newList = list[1...list.length-1]
+    newList = list[1..-1]
     if (list[0] < list[1] && verify_list(newList))
-        true
+        return true
     end
-    false
+    return false
 end
 
 list = [3,45,7,21,200,50,32,20]
